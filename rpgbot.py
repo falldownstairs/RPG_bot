@@ -15,38 +15,38 @@ async def on_message(message):
     if message.content.startswith('$hello'):
         await message.channel.send("hello!")
 
-@bot.startgame()
-async def test(ctx):
+@bot.command()
+async def startgame(ctx):
     pass
 
-@bot.help()
-async def test(ctx):
+@bot.command()
+async def help(ctx):
     pass
 
-@bot.savegame()
-async def test(ctx):
+@bot.command()
+async def savegame(ctx):
     pass
 
-@bot.loadgame()
-async def test(ctx):
+@bot.command()
+async def loadgame(ctx):
     pass
-@bot.option1()
-async def test(ctx):
+@bot.command()
+async def option1(ctx):
     pass
-@bot.option2()
-async def test(ctx):
+@bot.command()
+async def option2(ctx):
     pass
-@bot.option3()
-async def test(ctx):
+@bot.command()
+async def option3(ctx):
     pass
-@bot.option4()
-async def test(ctx):
+@bot.command()
+async def option4(ctx):
     pass
-@bot.aboutbot()
-async def test(ctx):
+@bot.command()
+async def aboutbot(ctx):
     pass
-@bot.storysynposis()
-async def test(ctx):
+@bot.command()
+async def storysynposis(ctx):
     pass
 
 
