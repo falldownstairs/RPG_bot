@@ -1,13 +1,16 @@
+from discord.ext import commands
 import discord
 import random
 
-client = discord.Client()
+intents = discord.Intents.default()
+intents.message_content = True
+bot = commands.Bot(command_prefix=">", intents=intents)
 
-@client.event
+@bot.event
 async def on_ready():
     print('We have logged in as {0.user}'.format(client))
 
-@client.event
+@bot.event
 async def on_message(message):
     if message.author == client.user:
         return
@@ -54,4 +57,4 @@ async def storysynposis(ctx):
 
 
 
-client.run("OTc1MTg1OTkwMTY5ODA0ODIw.GtRKgx.GAOuK6l6gXK6QP9sIth33Qf2Z-vXo4EHBfrZcU")
+bot.run("OTc1MTg1OTkwMTY5ODA0ODIw.GtRKgx.GAOuK6l6gXK6QP9sIth33Qf2Z-vXo4EHBfrZcU")
