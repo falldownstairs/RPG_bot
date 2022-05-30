@@ -25,6 +25,10 @@ async def shutdown(ctx):
 async def startgame(ctx):
     await ctx.channel.create_thread(name= ctx.author.name + "'s" + "game", auto_archive_duration=60, type=discord.ChannelType.public_thread, reason = None)
     
+# clears all game threads
+@bot.command()
+async def clearGames():
+    
 
 @bot.command()
 async def info(ctx):
