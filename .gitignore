@@ -1,1 +1,5 @@
 bot-env/
+save.p
+.git/
+.vs/
+_pycache_/

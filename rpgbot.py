@@ -45,6 +45,7 @@ async def clearGames(ctx):
         thread = bot.get_channel(game.getTid())
         await thread.delete()
     games.clear()
+    ctx.send("all games cleared")
 
 @bot.command()
 async def info(ctx):
