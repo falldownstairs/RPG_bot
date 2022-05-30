@@ -1,6 +1,5 @@
 import discord
-from discord.ext import commands # Import the commands extension
-# discord.ext.commands are not the same as discord.commands!
+from discord.ext import commands
 
 cmd_intents = discord.Intents.default()
 cmd_intents.message_content = True
@@ -18,9 +17,44 @@ async def ping(ctx):
 
 # stops bot
 @bot.command() 
-async def stop(ctx): 
+async def shutdown(ctx): 
     await ctx.send("Stopping bot") 
     exit()
+
+@bot.command(name = "start", description = "starts a game")
+async def startgame(ctx):
+    await ctx.channel.create_thread(name= ctx.author.name + "'s" + "game", auto_archive_duration=60, type=discord.ChannelType.public_thread, reason = None)
+    
+
+@bot.command()
+async def info(ctx):
+    pass
+
+@bot.command()
+async def savegame(ctx):
+    pass
+
+@bot.command()
+async def loadgame(ctx):
+    pass
+@bot.command()
+async def option1(ctx):
+    pass
+@bot.command()
+async def option2(ctx):
+    pass
+@bot.command()
+async def option3(ctx):
+    pass
+@bot.command()
+async def option4(ctx):
+    pass
+@bot.command()
+async def aboutbot(ctx):
+    pass
+@bot.command()
+async def storysynposis(ctx):
+    pass
 
 
 
