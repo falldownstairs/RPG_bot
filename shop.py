@@ -1,9 +1,10 @@
 import area
 
-def town(area):
+def shop(area):
     def ___init__(self,name,description):
         super.__init__()
-    def shop(self):
+    def buy(self):
         pass
-    def interactnpc(self):
+    def interact(self):
         pass
+    
