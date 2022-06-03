@@ -2,12 +2,12 @@ import area
 import random
 
 def terrain(area):
-    def ___init__(self,name,description,plains,forest,mountains,desert,tundra,volcano,snowy_mountains):
+    def ___init__(self,name,description,plains,forest,mountains,desert,cave,volcano,snowy_mountains):
         self.plains = plains
         self.forest = forest
         self.mountains = mountains
         self.desert = desert
-        self.tundra = tundra
+        self.cave = cave
         self.volcano = volcano
         self.snowy_mountains = snowy_mountains
         
@@ -22,7 +22,7 @@ def terrain(area):
             self.encounters = 2
         elif terrain == "desert":
             self.encounters = 3
-        elif terrain == "tundra":
+        elif terrain == "cave":
             self.encounters = 4
         elif terrain == "volcano":
             self.encounters = 5
@@ -38,7 +38,7 @@ def terrain(area):
             self.encounters = 2
         elif terrain == "desert":
             self.encounters = 3
-        elif terrain == "tundra":
+        elif terrain == "cave":
             self.encounters = 4
         elif terrain == "volcano":
             self.encounters = 5
@@ -54,7 +54,7 @@ def encounter3(self,encounters,terrain):
             self.encounters = 2
         elif terrain == "desert":
             self.encounters = 3
-        elif terrain == "tundra":
+        elif terrain == "cave":
             self.encounters = 4
         elif terrain == "volcano":
             self.encounters = 5
