@@ -45,11 +45,15 @@ async def clearGames(ctx):
         thread = bot.get_channel(game.getTid())
         await thread.delete()
     games.clear()
-    ctx.send("all games cleared")
+    await ctx.send("all games cleared")
 
 @bot.command()
 async def info(ctx):
-    pass
+    for game in games:
+        if game.getTid() == ctx.channel.id and game.getPid() == ctx.author.id:
+            encounter = game.get_current_encounter()
+            area = game.get_current_area()
+            await ctx.send("You are currently in: " + area.name + ".\n " + encounter.encounter_dialogue)
 
 @bot.command()
 async def savegame(ctx):
