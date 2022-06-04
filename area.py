@@ -1,7 +1,8 @@
 class area():
-    def __init__(self,name,description):
+    def __init__(self,name,description, encounters):
         self.name
         self.description
-        pass
+        self.encounters = encounters
+
     def traverse(self):
         pass
