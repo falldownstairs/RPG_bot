@@ -5,3 +5,6 @@ class Item():
 		self.price = price
 		self.name = name
 		self.desc = description
+
+	def interact(self):
+		pass
