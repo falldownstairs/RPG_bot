@@ -1,7 +1,7 @@
 import area
 import random
 
-def terrain(area):
+def Terrain(area):
     def ___init__(self,name,description,plains,forest,mountains,desert,cave,volcano,snowy_mountains):
         self.plains = plains
         self.forest = forest

@@ -2,7 +2,7 @@ import entity
 
 
 
-class player(entity):
+class Player(entity):
     def __init__(self,health):
         super.__init__(health)
         self.head_armor = None

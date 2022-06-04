@@ -1,8 +1,10 @@
-class area():
+import math
+
+class Area():
     def __init__(self,name,description, encounters):
-        self.name
-        self.description
+        self.name = name
+        self.description = description
         self.encounters = encounters
 
-    def traverse(self):
+    def get_next_encounter(self):
         pass

@@ -25,3 +25,4 @@ class Equippable(Item):
 			if player.weapon != None:
 				player.inventory.append(entity.weapon)
 			player.weapon = self
+		player.inventory.remove(self)
