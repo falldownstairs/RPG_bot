@@ -1,5 +1,6 @@
 #represents a game
 from areas import *
+from entity import *
 
 class Game():
 
@@ -8,6 +9,7 @@ class Game():
 		self.player_id = player_id
 		self.current_area = starting_area
 		self.current_encounter = None
+		self.player = Player(100, 0, 10)
 
 	def getTid(self):
 		return self.thread_id

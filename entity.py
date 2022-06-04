@@ -1,4 +1,4 @@
-class entity():
+class Entity():
     def ___init__(self,health, armor, attack):
         self.health = health
         self.armor = armor
@@ -13,16 +13,18 @@ class entity():
     def defend(self):
         pass
 
-class Enemy(entity):
-    def ___init__(self,health):
-        super.__init__()
+class Enemy(Entity):
+    def ___init__(self,health, armor, attack, name, description):
+        Entity.__init__(health, armor, attack)
+        self.name = name
+        self.description = description
     def loot(self):
         pass
 
 
-class Player(entity):
-    def __init__(self,health):
-        super.__init__(health)
+class Player(Entity):
+    def __init__(self,health, armor, attack):
+        Entity.__init__(health, armor, attack)
         self.head_armor = None
         self.body_armor = None
         self.footwear = None
