@@ -1,12 +1,3 @@
-import entity
-
-class Enemy(entity):
-    def ___init__(self,health):
-        super.__init__()
-    def loot(self):
-        pass
-
-
 # plains terrain enemies
 class goblin(enemy):
     pass

@@ -1,11 +1,11 @@
 #use this for general encounters
 class Encounter():
-    def __init__(self,encounter_dialouge,npc):
-        self.encounter_dialouge = encounter_dialouge
+    def __init__(self,encounter_dialogue,npc):
+        self.encounter_dialogue = encounter_dialogue
         self.npc = npc
-        pass
+
     def interact(self):
-        pass
+         
     
 
 # use this for encounters that advance a player to another area    
