@@ -49,37 +49,39 @@ async def clearGames(ctx):
 
 @bot.command()
 async def info(ctx):
-    for game in games:
-        if game.getTid() == ctx.channel.id and game.getPid() == ctx.author.id:
-            encounter = game.get_current_encounter()
-            area = game.get_current_area()
-            await ctx.send("You are currently in: " + area.name + ".\n " + encounter.encounter_dialogue)
+    if verify_game(ctx):
+        encounter = game.get_current_encounter()
+        area = game.get_current_area()
+        await ctx.send("You are currently in: " + area.name + ".\n " + encounter.encounter_dialogue)
 
-@bot.command()
-async def savegame(ctx):
-    pass
+@bot.command(name="continue", description= "continues game")
+async def continue_play(ctx):
+    if verify_game(ctx):
+        curr_game = None
+        for game in games:
+            if game.getTid() == ctx.channel.id:
+                curr_game = game
 
-@bot.command()
-async def loadgame(ctx):
-    pass
-@bot.command()
-async def option1(ctx):
-    pass
-@bot.command()
-async def option2(ctx):
-    pass
-@bot.command()
-async def option3(ctx):
-    pass
-@bot.command()
-async def option4(ctx):
-    pass
+            if curr_game == None:
+                return
+            if curr_game.is_ok_to_continue:
+                await ctx.send("Your Adventure Continues...")
+                curr_game.current_area.get_next_encounter()
+            else:
+                await ctx.send("You have to deal with the situation on hand first...")
+
 @bot.command()
 async def aboutbot(ctx):
     pass
 @bot.command()
 async def storysynposis(ctx):
     pass
+
+def verify_game(ctx):
+    for game in games:
+        if game.getTid() == ctx.channel.id and game.getPid() == ctx.author.id:
+            return True
+    return False
 
 
 

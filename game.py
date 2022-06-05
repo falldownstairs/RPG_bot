@@ -10,6 +10,7 @@ class Game():
 		self.current_area = starting_area
 		self.current_encounter = None
 		self.player = Player(100, 0, 10)
+		self.is_ok_to_continue = True
 
 	def getTid(self):
 		return self.thread_id
