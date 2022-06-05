@@ -37,7 +37,7 @@ class Player(Entity):
             if i.name == item_name:
                 item = i
 
-        iten.interact()
+        item.interact()
         self.inventory.remove(item)
 
     def attack(self):

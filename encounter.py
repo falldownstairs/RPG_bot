@@ -5,6 +5,7 @@ class Encounter():
         self.npc = npc
 
     def interact(self):
+        pass
          
     
 
