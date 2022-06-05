@@ -1,105 +1,78 @@
+from entity import*
 # plains terrain enemies
-class goblin(enemy):
-    pass
+goblin = Enemy(50, 5, 10, "goblin", "a short green thing that will hurt you")
    
-class wolf(enemy):
-    pass
+wolf = Enemy(30, 0, 15, "wolf", "a fast and swift creature that bites")
 
-class boar(enemy):
-    pass
+boar = Enemy(60, 5, 7, "boar", "a oversized pig that has big horns on its nose")
 
-class orc(enemy):
-    pass
+slime = Enemy(20, 0, 20, "slime", "a cute green blob that jumps on top of you and sucks out your soul")
 
-class slime(enemy):
-    pass
+orc = Enemy(90, 10, 10, "orc", "the goblin's big brother, its bigger fatter and uglier")
 
 # forest terrain enemies
 
-class small_dinosaur(enemy):
-    pass
+small_dinosaur = Enemy(30, 0, 15, "small_dinosaur", "a bigger and scarier version of a chicken")
 
-class large_dinosaur(enemy):
-    pass
+giant_spider = Enemy(40, 3, 10, "giant_spider","a scary creature with eight legs and eyes... kind of like your mother")
 
-class giant_spider(enemy):
-    pass
+tree_monster = Enemy(50, 10, 5, "tree_monster","looks like a normal tree in plain sight, turns out its not")
 
-class tree_monster(enemy):
-    pass
+forest_goblin = Enemy(50, 10, 15, "forest_goblin", "its a goblin... in the forest")
 
-class forest_goblin(enemy):
-    pass
+large_dinosaur = Enemy(100, 0, 20, "large_dinosaur", "a even bigger and scarier version of a chicken" )
 
 # mountain terrain enmies
 
-class troll(enemy):
-    pass
+troll = Enemy(60, 10, 10, "troll", "a goblin that isnt green")
 
-class stone_giant(enemy):
-    pass
+horned_goat = Enemy(70, 0, 20, "horned_goat", "a angry goat with horns")
 
-class horned_goat(enemy):
-    pass
+mountain_wolf = Enemy(50, 0, 15, "horned_goat","a wolf that lives on a mountain")
 
-class mountain_wolf(enemy):
-    pass
+stone_golem = Enemy(120, 10, 20, "stone_golem" "big pile of moving rocks")
 
 # desert terrain enemies
 
-class scorpion(enemy):
-    pass
+scorpion = Enemy(50, 15, 20, "scorpion", "a deadly poisonous insect that has a very hard exoskeleton")
 
-class mummy(enemy):
-    pass
+mummy = Enemy(60, 10, 15, "mummy", "a zombie wrapped in some prehistoric toilet paper")
 
-class sand_giant(enemy):
-    pass
+sand_golem = Enemy(100, 0, 10, "sand_golem", "a big pile of angry sand")
 
-class camel(enemy):
-    pass
+camel = Enemy(130, 15, 30,"camel", "yup, this is the boss")
 
 # cave terrain enemies
 
-class large_rat(enemy):
-    pass
+large_rat = Enemy(50, 10, 20,"large_rat", "a large disgusting supersized rat")
 
-class skeleton(enemy):
-    pass
+skeleton = Enemy(40, 20 , 20, "skeleton", "a dead guy with a sword")
 
-class large_bat(enemy):
-    pass
+large_bat = Enemy(50, 10, 15,"large_bat", "insert coronavirus joke")
 
-class poisonous_spider(enemy):
-    pass
-
-# volcano terrain enemies
-
-class dragon(enemy):
-    pass
-
-class fire_slime(enemy):
-    pass
-
-class large_fireant(enemy):
-    pass
-
-class black_skeletons(enemy):
-    pass
+large_poisonous_spider = Enemy(90, 20, 35, "poisonous_spider","a bigger scarier and poisonous version of your mother")
 
 # snowy mountains terrain enemies
 
-class drake(enemy):
-    pass
+drake = Enemy(50, 20, 20, "drake", "a silver dragon with hard scales")
 
-class ice_golem(enemy):
-    pass
+ice_golem = Enemy(60, 15, 20, "ice_golem", "a big ice cube")
 
-class polar_bear(enemy):
-    pass
+polar_bear = Enemy(60, 10, 30,"polar_bear", "a white bear that lives in cold areas")
 
-class yeti(enemy):
-    pass
+white_wolf = Enemy(40, 10, 20,"white_wolf", "a white wolf that lives in cold areas")
 
-class white_wolf(enemy):
-    pass
+yeti = Enemy(150, 20, 35, "yeti", "a big white scary monkey that is very muscular")
+
+
+# volcano terrain enemies
+
+fire_slime = Enemy(40, 0, 40, "fire_slime", "a slime that is constantly on fire")
+
+fireant = Enemy(50, 20, 30, "fireant", "people say being bitten by this insect feels like being on fire")
+
+black_skeleton = Enemy(60, 25, 15,"black_skeleton", "a skeleton that was freshly prepared inside a volcano")
+
+red_dragon = Enemy(200, 30, 50,"red_dragon","the final bosss, good luck")
+
+
