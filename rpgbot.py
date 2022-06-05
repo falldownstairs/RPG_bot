@@ -70,6 +70,11 @@ async def continue_play(ctx):
             else:
                 await ctx.send("You have to deal with the situation on hand first...")
 
+@bot.command(name="interact", description= "interacts with game")
+async def interact(ctx):
+    if verify_game(ctx):
+        pass
+
 @bot.command()
 async def aboutbot(ctx):
     pass
