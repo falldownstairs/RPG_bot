@@ -50,7 +50,7 @@ skeleton = Enemy(40, 20 , 20, "skeleton", "a dead guy with a sword")
 
 large_bat = Enemy(50, 10, 15,"large_bat", "insert coronavirus joke")
 
-large_poisonous_spider = Enemy(90, 20, 35, "poisonous_spider","a bigger scarier and poisonous version of your mother")
+poisonous_spider = Enemy(90, 20, 35, "poisonous_spider","a bigger scarier and poisonous version of your mother")
 
 # snowy mountains terrain enemies
 
