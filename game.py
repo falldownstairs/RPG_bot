@@ -4,19 +4,23 @@ from entity import *
 
 class Game():
 
-	def __init__(self, thread_id, player_id):
+	def __init__(self, thread_id, player_id, desc):
 		self.thread_id = thread_id
 		self.player_id = player_id
 		self.current_area = starting_area
 		self.current_encounter = None
 		self.player = Player(100, 0, 10)
 		self.is_ok_to_continue = True
+		self.desc = desc
 
 	def getTid(self):
 		return self.thread_id
 
 	def getPid(self):
 		return self.player_id
+
+	def getDesc(self):
+		return self.desc
 
 	def get_current_encounter(self):
 		return self.current_encounter

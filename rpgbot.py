@@ -2,6 +2,7 @@ import discord
 import pickle
 from game import Game
 from discord.ext import commands
+from discord.ui import Button
 import os
 
 cmd_intents = discord.Intents.default()
@@ -36,7 +37,7 @@ async def shutdown(ctx):
 @bot.command(name = "start", description = "starts a game")
 async def startgame(ctx):
     new_game = await ctx.channel.create_thread(name= ctx.author.name + "'s" + "game", auto_archive_duration=60, type=discord.ChannelType.public_thread, reason = None)
-    games.append(Game(new_game.id, ctx.author.id))
+    games.append(Game(new_game.id, ctx.author.id, "a game"))
     
 # clears all game threads
 @bot.command(name="clear", description= "clears all ongiong game threads")
@@ -71,22 +72,52 @@ async def continue_play(ctx):
                 await ctx.send("You have to deal with the situation on hand first...")
 
 @bot.command(name="interact", description= "interacts with game")
-async def interact(ctx):
+async def interact(ctx, choice):
     if verify_game(ctx):
-        pass
+        try:
+            int(choice)
+        except:
+            await ctx.send("enter a number corresponding to the choice you want")
+            return
+
+        curr_game = None
+        for game in games:
+            if game.getTid() == ctx.channel.id:
+                curr_game = game
+
+            if curr_game == None:
+                return
+
+        if game.get_current_encounter() == None:
+            await ctx.send("do the continue command first")
+
+
+
+
+
+        
 
 @bot.command()
 async def aboutbot(ctx):
     pass
 @bot.command()
 async def storysynposis(ctx):
-    pass
+    if verify_game():
+        for game in games:
+            if game.getTid() == ctx.channel.id:
+                curr_game = game
+
+            if curr_game == None:
+                return
+        
+        await ctx.send(game.getDesc())
 
 def verify_game(ctx):
     for game in games:
         if game.getTid() == ctx.channel.id and game.getPid() == ctx.author.id:
             return True
     return False
+
 
 
 
