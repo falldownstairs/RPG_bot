@@ -6,7 +6,7 @@ wolf = Enemy(30, 0, 15, "wolf", "a fast and swift creature that bites")
 
 boar = Enemy(60, 5, 7, "boar", "a oversized pig that has big horns on its nose")
 
-slime = Enemy(20, 0, 20, "slime", "a cute green blob that jumps on top of you and sucks out your soul")
+slime = Enemy(20, 0, 20, "slime", "a green blob that jumps on top of you and sucks out your soul")
 
 orc = Enemy(90, 10, 10, "orc", "the goblin's big brother, its bigger fatter and uglier")
 
