@@ -8,6 +8,7 @@ class Game():
 		self.thread_id = thread_id
 		self.player_id = player_id
 		self.current_area = starting_area
+		self.current_area.game = this
 		self.current_encounter = None
 		self.player = Player(100, 0, 10)
 		self.is_ok_to_continue = True

@@ -7,10 +7,11 @@ import os
 
 #use this for general encounters
 class Encounter():
-    def __init__(self,encounter_dialogue,npc, game):
+    def __init__(self,encounter_dialogue,npc, game, is_random):
         self.encounter_dialogue = encounter_dialogue
         self.attached_game = game
         self.attached_game.is_ok_to_continue = False
+        self.is_random = is_random
 
     def interact(self):
 
@@ -21,8 +22,8 @@ class Encounter():
 
 # use this for encounters that advance a player to another area    
 class Advance_To_Next_Area_Event(Encounter):
-    def __init__(self, encounter_dialogue,npc, game, next_area):
-        Encounter.__init__(encounter_dialogue,npc, game)
+    def __init__(self, encounter_dialogue,npc, game, next_area, is_random):
+        Encounter.__init__(encounter_dialogue,npc, game, is_random)
         self.attached_gamee = game
         self.next_area = next_area
 
@@ -37,8 +38,8 @@ class Advance_To_Next_Area_Event(Encounter):
 
 # use this for encounters that come one after another
 class Advance_To_Next_Encounter_Event(Encounter):
-    def __init__(self,encounter_dialogue,npc, game, next_encounter):
-        Encounter.__init__(encounter_dialogue,npc, game)
+    def __init__(self,encounter_dialogue,npc, game, next_encounter, is_random):
+        Encounter.__init__(encounter_dialogue,npc, game, is_random)
         self.game_to_advance = game
         self.next_encounter = next_encounter
 
@@ -52,15 +53,15 @@ class Advance_To_Next_Encounter_Event(Encounter):
 
 
 #use this for merchant encounters
-class Merchant_Encounter(Encounter):
-    def __init__(self,encounter_dialogue,npc, game, merchant_npc):
-        Encounter.__init__(encounter_dialogue,npc, game)
-        self.merchant = merchant_npc
+#class Merchant_Encounter(Encounter):
+ #   def __init__(self,encounter_dialogue,npc, game, merchant_npc):
+ #       Encounter.__init__(encounter_dialogue,npc, game)
+ #       self.merchant = merchant_npc
 
 #use this for encounters with up to 4 choices
 class Choice_Encounter(Encounter):
-    def __init__(self,encounter_dialogue,npc, game, choice1_encounter, choice2_encounter, choice3_encounter, choice4_encounter, num_of_choices):
-        Encounter.__init__(encounter_dialogue,npc, game)
+    def __init__(self,encounter_dialogue,npc, game, choice1_encounter, choice2_encounter, choice3_encounter, choice4_encounter, num_of_choices, is_random):
+        Encounter.__init__(encounter_dialogue,npc, game, is_random)
         self.encounter_dialogue = encounter_dialogue
         self.attached_game = game
         self.attached_game.is_ok_to_continue = False
@@ -108,8 +109,8 @@ class Choice_Encounter(Encounter):
 
 
 class Combat_Encounter(Encounter):
-    def __init__(self,encounter_dialogue,npc, game, successful_fight_encounter, enemy):
-        Encounter.__init__(encounter_dialogue,npc, game)
+    def __init__(self,encounter_dialogue,npc, game, successful_fight_encounter, enemy, is_random):
+        Encounter.__init__(encounter_dialogue,npc, game, is_random)
         self.encounter_dialogue = encounter_dialogue
         self.attached_game = game
         self.attached_game.is_ok_to_continue = False
@@ -119,6 +120,9 @@ class Combat_Encounter(Encounter):
     def interact(self, bot, ctx):
         #creates button-enabled UI for fight
         class fightView(discord.ui.View):
+            def __init__(self):
+                super().__init__(timeout=None) # timeout of the view must be set to None
+
             @discord.ui.button(label="Attack", row=0, style=discord.ButtonStyle.primary)
             async def first_button_callback(self, button, interaction):
                 await interaction.response.send_message("You attack")
