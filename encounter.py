@@ -1,3 +1,10 @@
+import discord
+import pickle
+from game import Game
+from discord.ext import commands
+from discord.ui import Button
+import os
+
 #use this for general encounters
 class Encounter():
     def __init__(self,encounter_dialogue,npc, game):
@@ -98,3 +105,33 @@ class Choice_Encounter(Encounter):
 
         #do stuff
         self.attached_game.is_ok_to_continue = False
+
+
+class Combat_Encounter(Encounter):
+    def __init__(self,encounter_dialogue,npc, game, successful_fight_encounter, enemy):
+        Encounter.__init__(encounter_dialogue,npc, game)
+        self.encounter_dialogue = encounter_dialogue
+        self.attached_game = game
+        self.attached_game.is_ok_to_continue = False
+        self.successful_fight_encounter  = successful_fight_encounter
+        self.enemy = enemy
+
+    def interact(self, bot, ctx):
+        #creates button-enabled UI for fight
+        class fightView(discord.ui.View):
+            @discord.ui.button(label="Attack", row=0, style=discord.ButtonStyle.primary)
+            async def first_button_callback(self, button, interaction):
+                await interaction.response.send_message("You attack")
+
+            @discord.ui.button(label="Use Item", row=1, style=discord.ButtonStyle.primary)
+            async def second_button_callback(self, button, interaction):
+                await interaction.response.send_message("Not Implemented")
+
+
+
+        #loop while fight is going on
+        while self.attached_game.player.health > 0 or enemy.health > 0:
+            pass
+
+        #do stuff
+        self.attached_game.is_ok_to_continue = True
