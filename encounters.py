@@ -26,5 +26,7 @@ Advance_threeA = Advance_To_Next_Encounter_Event("after the encounter with the s
 
 Advance_fourA = Advance_To_Next_Encounter_Event("you see a path behind the orc you just defeated it where could it lead?",None,None,advance_next_areaA, True)
 
+Start_Encounter = Encounter("You set out on an adventure. You don't have much right now '")
+
 
 

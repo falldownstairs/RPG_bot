@@ -9,9 +9,10 @@ class Game():
 		self.player_id = player_id
 		self.current_area = starting_area
 		self.current_area.game = this
-		self.current_encounter = None
+		#makes sure that player starts in the starting area, with the first encounter in the list
+		self.current_encounter = starting_area[0]
 		self.player = Player(100, 0, 10)
-		self.is_ok_to_continue = True
+		self.is_ok_to_continue = False
 		self.desc = desc
 
 	def getTid(self):

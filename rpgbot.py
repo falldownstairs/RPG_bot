@@ -4,6 +4,7 @@ from game import Game
 from discord.ext import commands
 from discord.ui import Button
 import os
+from encounter import *
 
 cmd_intents = discord.Intents.default()
 cmd_intents.message_content = True
@@ -77,7 +78,7 @@ async def interact(ctx, choice):
         try:
             int(choice)
         except:
-            await ctx.send("enter a number corresponding to the choice you want")
+            await ctx.send("enter a number corresponding to the choice you want. If encounter has no choices, just type 0")
             return
 
         curr_game = None
@@ -91,7 +92,13 @@ async def interact(ctx, choice):
         if game.get_current_encounter() == None:
             await ctx.send("do the continue command first")
 
+        if game.is_ok_to_continue == True:
+            await ctx.send("You've already finished interacting with this encounter'")
 
+        if type(game.get_current_encounter()) is Choice_Encounter: 
+            game.get_current_encounter().interact(int(choice))
+        else:
+            game.get_current_encounter().interact()
 
 
 
@@ -99,7 +106,7 @@ async def interact(ctx, choice):
 
 @bot.command()
 async def aboutbot(ctx):
-    pass
+    await ctx.send("Add info about bot")
 @bot.command()
 async def storysynposis(ctx):
     if verify_game():
