@@ -1,4 +1,5 @@
-from entity import*
+from entity import  *
+
 # plains terrain enemies
 goblin = Enemy(50, 5, 10, "goblin", "a short green thing that will hurt you")
    
@@ -30,7 +31,7 @@ horned_goat = Enemy(70, 0, 20, "horned_goat", "a angry goat with horns")
 
 mountain_wolf = Enemy(50, 0, 15, "horned_goat","a wolf that lives on a mountain")
 
-stone_golem = Enemy(120, 10, 20, "stone_golem" "big pile of moving rocks")
+stone_golem = Enemy(120, 10, 20, "stone_golem", "big pile of moving rocks")
 
 # desert terrain enemies
 

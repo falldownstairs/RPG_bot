@@ -118,6 +118,18 @@ def verify_game(ctx):
             return True
     return False
 
+class fightView(discord.ui.View):
+    def __init__(self):
+        super().__init__(timeout=None) # timeout of the view must be set to None
+
+    @discord.ui.button(label="Attack", row=0,custom_id="button-1",  style=discord.ButtonStyle.primary)
+    async def first_button_callback(self, button, interaction):
+        await interaction.response.send_message("You attack")
+
+    @discord.ui.button(label="Use Item", row=1,custom_id="button-2", style=discord.ButtonStyle.primary)
+    async def second_button_callback(self, button, interaction):
+        await interaction.response.send_message("Not Implemented")
+
 
 
 

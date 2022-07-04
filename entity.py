@@ -14,7 +14,7 @@ class Entity():
         pass
 
 class Enemy(Entity):
-    def ___init__(self,health, armor, attack, name, description):
+    def __init__(self,health, armor, attack, name, description):
         Entity.__init__(health, armor, attack)
         self.name = name
         self.description = description
