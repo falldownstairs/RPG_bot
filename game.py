@@ -8,9 +8,10 @@ class Game():
 		self.thread_id = thread_id
 		self.player_id = player_id
 		self.current_area = starting_area
-		self.current_area.game = this
+		self.current_area.game = self
 		#makes sure that player starts in the starting area, with the first encounter in the list
-		self.current_encounter = starting_area[0]
+		self.current_encounter = starting_area.encounters[0]
+		self.current_encounter.attached_game = self
 		self.player = Player(100, 0, 10)
 		self.is_ok_to_continue = False
 		self.desc = desc

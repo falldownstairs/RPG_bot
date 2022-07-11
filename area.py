@@ -1,5 +1,4 @@
 import math
-import encounters
 from encounter import *
 import random
 
@@ -9,6 +8,9 @@ class Area():
         self.description = description
         self.encounters = encounters
         self.game = None
+
+    def set_encounters(self, encounters):
+        self.encounters = encounters
 
     def get_next_encounter(self):
         #get next encounter and then load it with game
